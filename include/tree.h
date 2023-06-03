@@ -1,19 +1,20 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TREE_H_
 #define INCLUDE_TREE_H_
-
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <queue>
 class Tree {
-private:
+ private:
 	struct Node {
 		char c;
 		std::vector<Node*> vec;
 	};
 	Node* root;
 	std::vector<std::vector<char>>perms;
-
-
-
-public:
+ public:
 		Tree(std::vector<char> new_vec) {
 		root = new Node;
 		root->c = ' ';
