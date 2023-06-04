@@ -25,6 +25,9 @@ class Tree {
 	std::vector <char> getPerm(const Tree& tree, int n);
 
 	void createPerms(Node* root, std::vector<char>vector) {
+		if (!(root->c == ' ')) {
+			vector.push_back(root->c);
+		}
 		if (!root->vec.empty()) {
 			for (Node* next : root->vec) {
 				createPerms(next, vector);
@@ -33,9 +36,7 @@ class Tree {
 		else {
 			perms.push_back(vector);
 		}
-		if (!(root->c == ' ')) {
-			vector.push_back(root->c);
-		}
+		
 
 	}
 
